@@ -1,3 +1,14 @@
+Comparing the provided `about.html` with `index.html` and the template's design system, I can identify several styling issues that need to be fixed for visual consistency. Here are the key problems and their solutions:
+
+1. **Missing Open Graph meta tags** (present in index.html but missing in about.html)
+2. **Missing navigation collapse class** (navbar should have `navbar-collapse` class)
+3. **Inconsistent section padding classes** (some sections missing proper padding classes)
+4. **Missing CSS classes for proper styling** (some elements need additional classes from the template)
+5. **Missing favicon reference** (empty href)
+
+Here's the corrected HTML with minimal changes:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +21,16 @@
     <meta name="description" content="Bubble development agency helping startups and businesses design, build, and launch high-converting no-code web apps, marketplaces, and internal tools.">
     <!-- keywords -->
     <meta name="keywords" content="Bubble agency, Bubble development, no-code consulting, web app development, marketplace development, MVP development, no-code agency, product design, SaaS launch, startup consulting">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Panda Bubble Agency | About">
+    <meta property="og:description" content="Learn about our Bubble development agency helping startups and businesses design, build, and launch scalable no-code apps, marketplaces, and internal tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="about.html">
+    <meta property="og:site_name" content="Panda Bubble Agency">
     <!-- Page Title -->
     <title>Panda Bubble Agency | About</title>
     <!-- Favicon -->
-    <link href="" rel="icon">
+    <link href="design-agency/img/favicon.png" rel="icon">
     <!-- Bundle -->
     <link href="vendor/css/bundle.min.css" rel="stylesheet">
     <!-- Plugin Css -->
@@ -43,7 +60,7 @@
                 <img src="design-agency/img/logo.png" alt="logo" class="logo-dark">
             </a>
 
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
@@ -62,7 +79,7 @@
                 </span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -89,12 +106,12 @@
 <!-- Banner End -->
 
 <!-- About Section -->
-<section class="padding">
+<section class="padding-large">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="about-img">
-                    <img src="design-agency/img/about-img.jpg" alt="Bubble development team working on product strategy">
+                    <img src="design-agency/img/about-img.jpg" alt="Bubble development team working on product strategy" class="img-fluid rounded">
                 </div>
             </div>
             <div class="col-lg-6 pt-5 pt-lg-0">
@@ -135,7 +152,7 @@
 <!-- About Section End -->
 
 <!-- Services Section -->
-<section class="bg-light-gray padding" id="services">
+<section class="bg-light-gray padding-large" id="services">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -174,7 +191,7 @@
 <!-- Services Section End -->
 
 <!-- Process Section -->
-<section class="padding">
+<section class="padding-large">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -219,7 +236,7 @@
 <!-- Process Section End -->
 
 <!-- Trust Section -->
-<section class="bg-light-gray padding">
+<section class="bg-light-gray padding-large">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
@@ -257,7 +274,7 @@
             <div class="col-lg-6">
                 <div class="testimonial-box">
                     <span class="sub-title">Client confidence</span>
-                    <p class="mb-3">“They helped us turn a rough concept into a polished Bubble app that our team can actually run the business on.”</p>
+                    <p class="mb-3">"They helped us turn a rough concept into a polished Bubble app that our team can actually run the business on."</p>
                     <h5 class="mb-1">Product Founder</h5>
                     <span>Startup client</span>
                 </div>
@@ -276,13 +293,13 @@
 <!-- Trust Section End -->
 
 <!-- CTA Section -->
-<section class="padding">
+<section class="padding-large">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <div class="heading-area">
                     <span class="sub-title">Ready to build?</span>
-                    <h2 class="title">Let’s create your next Bubble product with a clear plan.</h2>
+                    <h2 class="title">Let's create your next Bubble product with a clear plan.</h2>
                     <p class="mt-3">Whether you need an MVP, a scalable internal tool, or a full product rebuild, we can help you move from concept to launch.</p>
                     <a href="index.html#contact" class="btn-setting btn-hvr-setting-main btn-yellow btn-hvr mt-4">Book a Discovery Call
                         <span class="btn-hvr-setting btn-hvr-black">
@@ -326,3 +343,16 @@
 <script src="design-agency/js/script.js"></script>
 </body>
 </html>
+```
+
+**Key fixes made:**
+
+1. **Added Open Graph meta tags** (lines 13-18) to match index.html structure
+2. **Fixed favicon link** (line 20) - added reference to favicon.png
+3. **Fixed navigation collapse** (lines 46 & 65) - added `id="navbarNav"` and updated data-target
+4. **Updated section padding classes** (lines 92, 138, 177, 222, 279) - changed `padding` to `padding-large` for consistency with the template
+5. **Added image styling** (line 97) - added `img-fluid rounded` classes for better image display
+6. **Fixed quotation marks** (line 260) - changed curly quotes to straight quotes for consistency
+7. **Fixed apostrophe** (line 285) - changed curly apostrophe to straight apostrophe
+
+These minimal changes ensure the about.html page now matches the visual design system of index.html while preserving all existing content and structure.
